@@ -1,0 +1,57 @@
+RESUMEN/TABLA COMPARATIVO DE ALGORITMOS DE ORDENAMIENTO
+Taller 5 — Ordenación en Java
+Por: Cael Alejandro Soto Castillo.
+
+- Este documento resume, de manera cualitativa, el comportamiento observado
+en los tres algoritmos implementados: Inserción, Selección y Burbuja.
+- El análisis se basa en las trazas generadas para los datasets solicitados.
+
+------------------------------------------------------------
+1. INSERCIÓN (Insertion Sort)
+------------------------------------------------------------
+- Realiza recorridos cortos cuando los elementos están casi ordenados.
+- La mayoría de movimientos ocurren cuando un número debe desplazarse
+  hacia la izquierda, generando varios "shifts".
+- Tiende a ser el más eficiente cuando la entrada ya está parcialmente
+  ordenada.
+- En los conjuntos analizados, el número total de desplazamientos fue
+  menor comparado con Selección y Burbuja.
+
+------------------------------------------------------------
+2. SELECCIÓN (Selection Sort)
+------------------------------------------------------------
+- Recorre siempre toda la lista para encontrar el mínimo, sin importar
+  si el arreglo ya está ordenado o no.
+- Genera pocos intercambios (generalmente uno por iteración), pero
+  realiza muchas comparaciones.
+- En entradas desordenadas, mantiene un comportamiento estable, pero no
+  es eficiente para vectores grandes.
+- En los datasets trabajados, el número de comparaciones fue constante
+  por iteración, y la cantidad de swaps fue baja pero inevitable.
+
+------------------------------------------------------------
+3. BURBUJA (Bubble Sort)
+------------------------------------------------------------
+- Su rendimiento es muy variable: empeora con listas invertidas y mejora
+  cuando detecta orden temprano.
+- El uso de "corte temprano" permitió detener el algoritmo cuando ya no
+  existían intercambios.
+- En entradas casi ordenadas, fue el más rápido en detenerse.
+- En los casos analizados, mostró más intercambios que Inserción, pero
+  menos comparaciones que Selección.
+
+------------------------------------------------------------
+4. CONCLUSIONES GENERALES
+------------------------------------------------------------
+- Inserción fue el algoritmo que realizó menos movimientos globales en
+  la mayoría de casos.
+- Selección mantuvo siempre el mismo número de comparaciones, lo que lo
+  convierte en el menos eficiente cuando el dataset está parcialmente
+  ordenado.
+- Burbuja mostró mayor variabilidad, pero con el corte temprano logró un
+  comportamiento aceptable en entradas no aleatorias.
+- Para datasets pequeños o casi ordenados, Inserción y Burbuja con corte
+  temprano presentan mejor desempeño.
+- Para educación y análisis comparativo, Selección permite observar
+  claramente los movimientos mínimos de intercambio, aunque su costo en
+  comparaciones es alto.
