@@ -104,8 +104,7 @@ public class SelectionSort {
             }
 
             // mostramos siempre la iteración
-            sb.append("iteración ").append(i + 1).append(": ")
-                    .append(Arrays.toString(copy)).append("\n");
+            sb.append("iteración ").append(i + 1).append(": ").append(Arrays.toString(copy)).append("\n");
         }
 
         sb.append("Intercambios realizados: ").append(swapCount).append("\n");

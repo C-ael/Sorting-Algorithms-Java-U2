@@ -4,28 +4,27 @@ import java.util.Arrays;
 
 public class BubbleSort {
 
-    // evita crear objetos de esta clase
+    // evita instanciar esta clase
     private BubbleSort() {}
 
-    // método sin trazas
+    // ordena el arreglo sin mostrar trazas
     public static void sort(int[] a) {
         sort(a, false);
     }
 
-    // ordena el arreglo usando el método burbuja
+    // ordena el arreglo usando burbuja y opcionalmente muestra trazas
     public static void sort(int[] a, boolean trace) {
 
-        // validación básica
         if (a == null) {
             throw new IllegalArgumentException("El arreglo no puede ser null.");
         }
 
         int n = a.length;
 
-        // con 0 o 1 elemento no hay nada que ordenar
+        // si tiene 0 o 1 elemento, ya está ordenado
         if (n < 2) {
             if (trace) {
-                System.out.println("El arreglo ya está ordenado (tamaño menor a 2).");
+                System.out.println("El arreglo ya está ordenado (menos de 2 elementos).");
                 SortingUtils.printArray(a);
             }
             return;
@@ -34,7 +33,7 @@ public class BubbleSort {
         boolean swapped;
         int iteration = 0;
 
-        // muestra el arreglo original antes de empezar
+        // muestra el arreglo original
         if (trace) {
             System.out.print("Arreglo original: ");
             SortingUtils.printArray(a);
@@ -45,7 +44,7 @@ public class BubbleSort {
             swapped = false;
             iteration++;
 
-            // compara elementos vecinos
+            // compara elementos vecinos y los intercambia si es necesario
             for (int j = 0; j < n - 1 - i; j++) {
                 if (a[j] > a[j + 1]) {
                     SortingUtils.swap(a, j, j + 1);
@@ -53,16 +52,16 @@ public class BubbleSort {
                 }
             }
 
-            // se muestra cada iteración tal como pide la práctica
+            // muestra cada iteración si se pide traza
             if (trace) {
                 System.out.print("iteración " + iteration + ": ");
                 SortingUtils.printArray(a);
             }
 
-            // si no hubo intercambios, ya está ordenado
+            // si no hubo intercambios, el arreglo ya está ordenado
             if (!swapped) {
                 if (trace) {
-                    System.out.println("Corte temprano: no hubo intercambios en la iteración " + iteration + ".");
+                    System.out.println("Corte temprano: sin intercambios en iteración " + iteration + ".");
                 }
                 break;
             }
@@ -73,7 +72,7 @@ public class BubbleSort {
         }
     }
 
-    // genera trazas sin imprimir en consola
+    // genera trazas del algoritmo sin imprimir en consola
     public static String getTrace(int[] a) {
         int[] copy = a.clone();
         int n = copy.length;
@@ -81,7 +80,7 @@ public class BubbleSort {
         StringBuilder sb = new StringBuilder();
         sb.append("Arreglo original: ").append(Arrays.toString(copy)).append("\n");
 
-        // casos pequeños no necesitan iteraciones
+        // arreglos pequeños no requieren iteraciones
         if (n < 2) {
             sb.append("Arreglo con menos de 2 elementos, no requiere ordenamiento.\n");
             return sb.toString();
@@ -90,7 +89,7 @@ public class BubbleSort {
         boolean swapped;
         int iteration = 0;
 
-        // mismas pasadas que sort()
+        // misma lógica de burbuja, pero guarda los pasos en un String
         for (int i = 0; i < n - 1; i++) {
             swapped = false;
             iteration++;
@@ -102,13 +101,11 @@ public class BubbleSort {
                 }
             }
 
-            // siempre se agrega la iteración a la traza
-            sb.append("iteración ").append(iteration).append(": ")
-                    .append(Arrays.toString(copy)).append("\n");
+            // agrega la iteración a la traza
+            sb.append("iteración ").append(iteration).append(": ").append(Arrays.toString(copy)).append("\n");
 
             if (!swapped) {
-                sb.append("Corte temprano en iteración ").append(iteration)
-                        .append(" (sin intercambios)\n");
+                sb.append("Corte temprano en iteración ").append(iteration).append(" (sin intercambios)\n");
                 break;
             }
         }

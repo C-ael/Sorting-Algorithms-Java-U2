@@ -71,8 +71,7 @@ public class InsertionSort {
         int n = copy.length;
 
         StringBuilder sb = new StringBuilder();
-        sb.append("Arreglo original: ")
-                .append(Arrays.toString(copy)).append("\n");
+        sb.append("Arreglo original: ").append(Arrays.toString(copy)).append("\n");
 
         // si tiene 0 o 1 elemento, ya está ordenado
         if (n < 2) {
@@ -95,8 +94,7 @@ public class InsertionSort {
             copy[j + 1] = key;
 
             // agrega la traza
-            sb.append("iteración ").append(i).append(": ")
-                    .append(Arrays.toString(copy)).append("\n");
+            sb.append("iteración ").append(i).append(": ").append(Arrays.toString(copy)).append("\n");
         }
         return sb.toString();
     }
