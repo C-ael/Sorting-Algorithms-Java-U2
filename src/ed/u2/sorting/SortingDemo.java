@@ -165,6 +165,8 @@ public class SortingDemo {
         return array;
     }
 
+    // genera el trazado paso a paso del algoritmo de inserción
+    // permite ver cómo se mueven los elementos en cada iteración
     private static String generateInsertionTrace(int[] original) {
         StringBuilder sb = new StringBuilder();
         sb.append("***[ ALGORITMO DE INSERCIÓN ]***\n");
@@ -176,6 +178,8 @@ public class SortingDemo {
         return sb.toString();
     }
 
+    // genera el trazado paso a paso del algoritmo de selección
+    // muestra cómo selecciona el elemento mínimo en cada iteración
     private static String generateSelectionTrace(int[] original) {
         StringBuilder sb = new StringBuilder();
         sb.append("***[ ALGORITMO DE SELECCIÓN ]***\n");
@@ -187,6 +191,8 @@ public class SortingDemo {
         return sb.toString();
     }
 
+    // genera el trazado paso a paso del algoritmo de burbuja
+    // muestra cómo se detiene el proceso cuando ya no hay intercambios (corte temprano)
     private static String generateBubbleTrace(int[] original) {
         StringBuilder sb = new StringBuilder();
         sb.append("***[ ALGORITMO DE BURBUJA ]***\n");

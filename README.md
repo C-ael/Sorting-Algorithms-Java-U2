@@ -1,4 +1,4 @@
-# Sorting-Algorithms-Java-U2
+# Ordenación básica en Java U2
 Inserción, Selección, Burbuja, manejo de archivos, trazas y validaciones.
 
 ---
@@ -61,7 +61,7 @@ El programa valida entradas incorrectas y nunca se cierra inesperadamente.
 — Contiene los archivos .txt que pueden ser cargados en el programa.
 
 ### Paquete `evidencias`
-— Contiene los archivos .txt generados automáticamente tras la ejecución de la opción 2, para mostrar los resultados obtenidos en base a los archivos cargados en el paquete 'datasets'.
+— Contiene los archivos .txt generados automáticamente tras la ejecución de la opción 2, para mostrar los resultados obtenidos en base a los archivos cargados en el paquete `datasets/`.
 
 ---
 
