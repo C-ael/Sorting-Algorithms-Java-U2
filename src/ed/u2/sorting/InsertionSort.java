@@ -41,20 +41,18 @@ public class InsertionSort {
         for (int i = 1; i < n; i++) {
             int key = a[i];      // elemento que se va a insertar
             int j = i - 1;       // posición previa
-            boolean changed = false;  // indica si hubo movimiento
 
             // mueve elementos mayores una posición a la derecha
             while (j >= 0 && a[j] > key) {
                 a[j + 1] = a[j];
                 j--;
-                changed = true;
             }
 
             // coloca el elemento en su posición correcta
             a[j + 1] = key;
 
-            // imprimimos solo si hubo un cambio real
-            if (trace && changed) {
+            // mostramos la iteración (aunque no haya cambios visibles)
+            if (trace) {
                 System.out.print("iteración " + i + ": ");
                 SortingUtils.printArray(a);
             }

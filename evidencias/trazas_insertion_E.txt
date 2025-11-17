@@ -1,6 +1,6 @@
 ***[ ALGORITMO DE INSERCIÓN ]***
-iteración 1: 1 5 2
-iteración 2: 1 2 5
-Ordenamiento por inserción completado.
-
-Resultado final: [1, 2, 5]
+Arreglo original: [9, 1, 8, 2]
+iteración 1: [1, 9, 8, 2]
+iteración 2: [1, 8, 9, 2]
+iteración 3: [1, 2, 8, 9]
+Resultado final: [1, 2, 8, 9]

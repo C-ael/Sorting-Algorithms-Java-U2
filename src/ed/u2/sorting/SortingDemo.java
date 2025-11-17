@@ -165,13 +165,12 @@ public class SortingDemo {
         return array;
     }
 
-    // genera las trazas sin tocar el arreglo original
     private static String generateInsertionTrace(int[] original) {
         StringBuilder sb = new StringBuilder();
         sb.append("***[ ALGORITMO DE INSERCIÓN ]***\n");
-
         int[] copy = SortingUtils.copy(original);
         sb.append(InsertionSort.getTrace(copy));
+        InsertionSort.sort(copy);
 
         sb.append("Resultado final: ").append(Arrays.toString(copy)).append("\n");
         return sb.toString();
@@ -182,6 +181,7 @@ public class SortingDemo {
         sb.append("***[ ALGORITMO DE SELECCIÓN ]***\n");
         int[] copy = SortingUtils.copy(original);
         sb.append(SelectionSort.getTrace(copy));
+        SelectionSort.sort(copy);
 
         sb.append("Resultado final: ").append(Arrays.toString(copy)).append("\n");
         return sb.toString();
@@ -192,6 +192,7 @@ public class SortingDemo {
         sb.append("***[ ALGORITMO DE BURBUJA ]***\n");
         int[] copy = SortingUtils.copy(original);
         sb.append(BubbleSort.getTrace(copy));
+        BubbleSort.sort(copy);
 
         sb.append("Resultado final: ").append(Arrays.toString(copy)).append("\n");
         return sb.toString();

@@ -31,7 +31,7 @@ public class SelectionSort {
             return;
         }
 
-        // muestra el arreglo original
+        // mostramos el arreglo original antes de ordenar
         if (trace) {
             System.out.print("Arreglo original: ");
             SortingUtils.printArray(a);
@@ -41,8 +41,7 @@ public class SelectionSort {
 
         // recorre cada posición del arreglo
         for (int i = 0; i < n - 1; i++) {
-            int minIndex = i;   // índice del menor valor
-            boolean changed = false; // sirve para saber si hubo intercambio
+            int minIndex = i;   // índice del menor valor encontrado
 
             // busca el valor más pequeño en la parte no ordenada
             for (int j = i + 1; j < n; j++) {
@@ -51,15 +50,14 @@ public class SelectionSort {
                 }
             }
 
-            // si se encontró uno menor, se intercambia
+            // si se encontró un valor menor, intercambia
             if (minIndex != i) {
                 SortingUtils.swap(a, i, minIndex);
-                changed = true;
                 swapCount++;
             }
 
-            // solo imprimimos si hubo cambio real
-            if (trace && changed) {
+            // mostramos siempre la iteración, independientemente de si hubo o no intercambio
+            if (trace) {
                 System.out.print("iteración " + (i + 1) + ": ");
                 SortingUtils.printArray(a);
             }
@@ -80,6 +78,7 @@ public class SelectionSort {
         StringBuilder sb = new StringBuilder();
         sb.append("Arreglo original: ").append(Arrays.toString(copy)).append("\n");
 
+        // si tiene menos de 2 elementos no necesita ordenamiento
         if (n < 2) {
             sb.append("Arreglo con menos de 2 elementos, no requiere ordenamiento.\n");
             return sb.toString();
@@ -91,22 +90,22 @@ public class SelectionSort {
         for (int i = 0; i < n - 1; i++) {
             int minIndex = i;
 
-            // busca el menor en la parte no ordenada
+            // busca el valor más pequeño en la zona no ordenada
             for (int j = i + 1; j < n; j++) {
                 if (copy[j] < copy[minIndex]) {
                     minIndex = j;
                 }
             }
 
-            // intercambia si se encontró uno menor
+            // intercambia si corresponde
             if (minIndex != i) {
                 SortingUtils.swap(copy, i, minIndex);
                 swapCount++;
             }
 
-            // añade la traza siempre, igual que en tu versión anterior
-            sb.append("iteración ").append(i + 1)
-                    .append(": ").append(Arrays.toString(copy)).append("\n");
+            // mostramos siempre la iteración
+            sb.append("iteración ").append(i + 1).append(": ")
+                    .append(Arrays.toString(copy)).append("\n");
         }
 
         sb.append("Intercambios realizados: ").append(swapCount).append("\n");

@@ -1,13 +1,5 @@
 ***[ ALGORITMO DE BURBUJA ]***
-iteración 1: 3 5 2 8 1 4 7 6 0 9
-iteración 2: 3 2 5 1 4 7 6 0 8 9
-iteración 3: 2 3 1 4 5 6 0 7 8 9
-iteración 4: 2 1 3 4 5 0 6 7 8 9
-iteración 5: 1 2 3 4 0 5 6 7 8 9
-iteración 6: 1 2 3 0 4 5 6 7 8 9
-iteración 7: 1 2 0 3 4 5 6 7 8 9
-iteración 8: 1 0 2 3 4 5 6 7 8 9
-iteración 9: 0 1 2 3 4 5 6 7 8 9
-Ordenamiento por burbuja completado.
-
-Resultado final: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Arreglo original: [1, 2, 3, 4, 5]
+iteración 1: [1, 2, 3, 4, 5]
+Corte temprano en iteración 1 (sin intercambios)
+Resultado final: [1, 2, 3, 4, 5]
