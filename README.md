@@ -4,110 +4,91 @@ Inserción, Selección, Burbuja, manejo de archivos, trazas y validaciones.
 ---
 
 ## Tabla de contenidos
-1. [Descripción](#descripción)
-2. [Ejecución del programa](#ejecución-del-programa)
-3. [Estructura del proyecto](#estructura-del-proyecto)
-4. [Datasets y evidencias](#datasets-y-evidencias)
-5. [Decisiones de diseño](#decisiones-de-diseño)
-6. [Casos borde considerados](#casos-borde-considerados)
+1. [Descripción](#descripción)  
+2. [Ejecución del programa](#ejecución-del-programa)  
+3. [Estructura del proyecto](#estructura-del-proyecto)   
+4. [Decisiones de diseño](#decisiones-de-diseño)  
+5. [Casos borde considerados](#casos-borde-considerados)
 
 ---
 
 ## Descripción
 
-Este proyecto implementa tres algoritmos básicos de ordenamiento: Inserción, Selección y Burbuja.
+Este proyecto implementa los algoritmos básicos de ordenamiento **Inserción**, **Selección** y **Burbuja**, permitiendo observar su funcionamiento paso a paso mediante trazas completas.
 
 El programa permite:
-1. Ingresar manualmente un arreglo, mostrando las trazas directamente en consola.
-2. Procesar automáticamente todos los archivos .txt dentro de la carpeta datasets/, generando trazas completas en la carpeta evidencias/.
 
-El objetivo es observar el comportamiento paso a paso de cada algoritmo y documentar los resultados de forma automatizada.
+1. Ingresar manualmente un arreglo y visualizar todas las iteraciones del algoritmo en consola.  
+2. Procesar automáticamente todos los archivos `.txt` dentro de la carpeta `datasets/`, generando las trazas completas en la carpeta `evidencias/`.
+
+El objetivo es analizar el comportamiento real de cada algoritmo, mostrando sus pasos internos, movimientos e intercambios hasta obtener el resultado final ordenado.
 
 ---
 
 ## Ejecución del programa
 
 ### Requisitos
-- Java 8+
-- IntelliJ IDEA o cualquier IDE sin Maven
-- Carpetas datasets/ y evidencias/ ubicadas en la raíz del proyecto
+- Java 8+  
+- IntelliJ IDEA o cualquier IDE sin dependencias externas  
+- Carpetas `datasets/` y `evidencias/` en la raíz del proyecto  
 
 ### Cómo ejecutar
-1. Abrir el proyecto en IntelliJ IDEA.
-2. Ejecutar la clase principal: ed.u2.sorting.SortingDemo
-3. Seleccionar una opción en el menú:
+1. Abrir el proyecto.  
+2. Ejecutar la clase principal: `ed.u2.sorting.SortingDemo`  
+3. Elegir una opción del menú:
 
-1.Ingresar arreglo manualmente
-2.Procesar archivos .txt desde datasets/
-3.Salir
+   1. Ingresar arreglo manualmente  
+   2. Procesar archivos `.txt` desde `datasets/`  
+   3. Salir  
 
-La opción 1 muestra trazas en consola.  
-La opción 2 genera archivos .txt con todas las iteraciones.  
-El programa siempre vuelve al menú y no se cierra por errores de entrada.
+La opción **1** muestra trazas en consola.  
+La opción **2** genera archivos en `evidencias/` con todas las iteraciones.  
+El programa valida entradas incorrectas y nunca se cierra inesperadamente.
 
 ---
 
 ## Estructura del proyecto
-src/
-└── ed/u2/sorting/
-├── SortingDemo.java
-├── SortingUtils.java
-├── InsertionSort.java
-├── SelectionSort.java
-└── BubbleSort.java
 
-datasets/ ← archivos .txt de entrada
-evidencias/ ← salidas generadas automáticamente
-README.md
+### Paquete `src`
+#### Paquete `ed/u2/sorting/`
+- `InsertionSort` — Algoritmo de Inserción, mostrando la construcción progresiva del subarreglo ordenado.
+- `SelectionSort` — Algoritmo de Selección, indicando cada intercambio real detectado.
+- `BubbleSort` — Algoritmo de Burbuja estándar con corte temprano y trazas completas por cada pasada del algoritmo.
+- `SortingUtils` — swap, impresión, verificación de ordenamiento, validaciones.
+- `SortingDemo` — Control del menú y flujo general.
 
----
+### Paquete `datasets`
+— Contiene los archivos .txt que pueden ser cargados en el programa.
 
-## Datasets y evidencias
-
-### datasets/
-Contiene los archivos .txt con los números a ordenar.  
-Ejemplo de contenido: 10 3 6 1 9 2
-
-El programa procesa todos los archivos .txt presentes sin necesidad de modificar el código.
-
-### evidencias/
-El programa genera automáticamente tres archivos por cada dataset:
-
-trazas_insertion_<dataset>.txt
-trazas_selection_<dataset>.txt
-trazas_bubble_<dataset>.txt
-
-Cada archivo incluye:
-- Las iteraciones del algoritmo
-- Movimientos o intercambios realizados
-- El resultado final ordenado
+### Paquete `evidencias`
+— Contiene los archivos .txt generados automáticamente tras la ejecución de la opción 2, para mostrar los resultados obtenidos en base a los archivos cargados en el paquete 'datasets'.
 
 ---
 
 ## Decisiones de diseño
 
 ### Separación por responsabilidades
-- SortingDemo gestiona el menú, la interacción y el procesamiento de archivos.
-- Cada algoritmo está implementado en su propia clase para mantener claridad.
-- SortingUtils agrupa utilidades para evitar duplicación de código.
+- `SortingDemo` gestiona la interacción con el usuario, el menú y la lectura/escritura de archivos.  
+- Cada algoritmo está aislado en su propia clase para facilitar claridad y mantenimiento.  
+- `SortingUtils` evita duplicación de código y centraliza funciones comunes.
 
-### Sistema escalable
-El programa detecta automáticamente todos los archivos .txt dentro de datasets/, permitiendo añadir nuevos archivos sin cambiar el código.
+### Iteraciones completas
+Se decidió mostrar **todas las iteraciones** para cumplir con los requerimientos del taller y facilitar el análisis del comportamiento del algoritmo.
 
-### Evidencias independientes
-Cada ejecución genera archivos separados por algoritmo, lo que permite analizar sus diferencias de forma clara.
+### Manejo automático de datasets
+El programa detecta cualquier archivo `.txt` dentro de `datasets/` y genera automáticamente sus evidencias sin modificar el código.
 
 ### Robustez
-Se aplicaron validaciones para evitar que entradas inválidas o archivos corruptos detengan la ejecución.
+Se implementaron validaciones para evitar errores comunes y permitir que el programa siga ejecutándose sin fallos y sea amigable con el usuario.
 
 ---
 
 ## Casos borde considerados
 
-- Ingreso de texto no numérico durante la entrada manual.
-- Cantidad de elementos menor o igual a cero.
-- Archivos .txt vacíos o sin números válidos.
-- Archivos con espacios múltiples, líneas vacías o formatos irregulares.
-- Carpeta datasets/ inexistente, creada automáticamente.
-- Problemas de lectura o escritura en evidencias/, manejados sin cerrar el programa.
-- Arreglos de un solo elemento o vacíos.
+- Entrada manual con caracteres no numéricos  
+- Arreglos vacíos o de un solo elemento  
+- Archivos `.txt` vacíos 
+- Archivos con espacios múltiples o saltos de línea irregulares  
+- Carpetas `datasets/` o `evidencias/` ausentes (creadas automáticamente)  
+- Errores de lectura o escritura manejados sin cerrar el programa  
+- Validaciones antes de imprimir o procesar información  
