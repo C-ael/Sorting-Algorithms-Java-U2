@@ -1,0 +1,7 @@
+***[ ALGORITMO DE BURBUJA ]***
+iteración 1: 1 2 5
+iteración 2: 1 2 5
+Corte temprano: no hubo intercambios en la iteración 2.
+Ordenamiento por burbuja completado.
+
+Resultado final: [1, 2, 5]

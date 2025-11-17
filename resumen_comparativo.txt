@@ -1,6 +1,8 @@
 RESUMEN/TABLA COMPARATIVO DE ALGORITMOS DE ORDENAMIENTO
 Taller 5 — Ordenación en Java
-Por: Cael Alejandro Soto Castillo.
+Por:
+- Cael Alejandro Soto Castillo.
+- Ariel Ismael González Astudillo.
 
 - Este documento resume, de manera cualitativa, el comportamiento observado
 en los tres algoritmos implementados: Inserción, Selección y Burbuja.

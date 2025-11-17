@@ -1,0 +1,13 @@
+***[ ALGORITMO DE INSERCIÓN ]***
+iteración 1: 2 4 4 1 3 2 5 1 4 3
+iteración 2: 2 4 4 1 3 2 5 1 4 3
+iteración 3: 1 2 4 4 3 2 5 1 4 3
+iteración 4: 1 2 3 4 4 2 5 1 4 3
+iteración 5: 1 2 2 3 4 4 5 1 4 3
+iteración 6: 1 2 2 3 4 4 5 1 4 3
+iteración 7: 1 1 2 2 3 4 4 5 4 3
+iteración 8: 1 1 2 2 3 4 4 4 5 3
+iteración 9: 1 1 2 2 3 3 4 4 4 5
+Ordenamiento por inserción completado.
+
+Resultado final: [1, 1, 2, 2, 3, 3, 4, 4, 4, 5]

@@ -1,0 +1,6 @@
+***[ ALGORITMO DE SELECCIÓN ]***
+iteración 1: 1 5 2
+iteración 2: 1 2 5
+Ordenamiento por selección completado. Intercambios realizados: 2
+
+Resultado final: [1, 2, 5]
